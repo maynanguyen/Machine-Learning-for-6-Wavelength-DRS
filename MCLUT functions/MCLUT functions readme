@@ -1,8 +1,0 @@
-The following files are required to run the MCLUT:
-MC_LUT_forward.m
-MC_LUT_inverse.m
-MC_LUT_fitness.m
-optprop.m
-Hb.mat
-mel.mat
-LUT_1mm6Wave.m

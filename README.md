@@ -1,7 +1,7 @@
 # Machine-Learning-for-6-Wavelength-DRS
 
 Code for machine learning models and Monte Carlo Lookup Table (MCLUT) models to extract physiological parameters from 6 wavelengths of diffuse reflectance. 
-Folders
+Folders:
 - Analysis and figures: code to generate figures, calculate errors, determine crosstalk
 - Deep Learning MATLAB: functions that contain deep learning models built in MATLAB for time analysis
 - DRS simulation and data generation: code to generate diffuse reflectance spectra, split into test/train set, and resulting datasets

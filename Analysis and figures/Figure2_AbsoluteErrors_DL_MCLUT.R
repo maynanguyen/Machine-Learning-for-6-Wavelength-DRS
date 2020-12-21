@@ -1,7 +1,7 @@
 library(tidyverse)
 library(ggplot2)
 library(ggsignif)
-predictresults <-read.csv("C:/Users/Mayna/Documents/Research/PredictResults.csv")
+predictresults <-read.csv("C:/Users/Mayna/Documents/Research/AllResultsNoise.csv")
 
 #  MCLUT error
 BVF_MCLUT_error <- abs ((predictresults$BVF.MCLUT - predictresults$BVF.true))
@@ -32,7 +32,7 @@ O2_DL_avg <- mean(O2_DL_error)
 
 #for barplot
 df1 <- data.frame(Model = rep(c("Deep Learning", "MCLUT"), each = 5),
-                  param = c("BVF (%)","µs' (cm^-1)","B", "[Mel] (mg/ml)","O2 (%)"),
+                  param = c("BVF (%)","Âµs' (cm^-1)","B", "[Mel] (mg/ml)","O2 (%)"),
                   error = c(BVF_DL_avg,
                             musp_DL_avg,
                             B_DL_avg,
@@ -54,7 +54,7 @@ df1 <- data.frame(Model = rep(c("Deep Learning", "MCLUT"), each = 5),
                          sd(Mel_MCLUT_error), 
                          sd(O2_MCLUT_error)) )
 
-df1$param_f = factor(df1$param, levels=c("BVF (%)","µs' (cm^-1)","B", "[Mel] (mg/ml)","O2 (%)"))
+df1$param_f = factor(df1$param, levels=c("BVF (%)","Âµs' (cm^-1)","B", "[Mel] (mg/ml)","O2 (%)"))
 levels(df1$param_f) <- c("'BVF (%)'","mu*minute[s]~'(cm'^-1~')'","B","'[Mel] (mg/ml)'","O[2]~'(%)'")
 
 annotation_df_bar <- data.frame(param_f=c("'BVF (%)'","mu*minute[s]~'(cm'^-1~')'","B","'[Mel] (mg/ml)'","O[2]~'(%)'"),
@@ -100,8 +100,8 @@ annotation_df <- data.frame(param=c("BVF", "musp","B", "Mel", "O2"),
                             y= c(3.4,34,2,2,67),
                             label = c("***","***","***","***","***") )
 
-levels(df2$param)<-  c("BVF (%)","µs' (cm^-1)","B", "[Mel] (mg/ml)","O2 (%)")
-levels(annotation_df$param)<-  c("BVF (%)","µs' (cm^-1)","B", "[Mel] (mg/ml)","O2 (%)")
+levels(df2$param)<-  c("BVF (%)","Âµs' (cm^-1)","B", "[Mel] (mg/ml)","O2 (%)")
+levels(annotation_df$param)<-  c("BVF (%)","Âµs' (cm^-1)","B", "[Mel] (mg/ml)","O2 (%)")
 
 errors_boxplot<-ggplot(data=df2) +
   geom_boxplot(mapping = aes(x=param, y=error, fill = Model), position=position_dodge()) + scale_fill_brewer(palette="Paired") + theme_classic() + 

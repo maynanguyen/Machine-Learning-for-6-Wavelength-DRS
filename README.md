@@ -1,5 +1,7 @@
 # Machine-Learning-for-6-Wavelength-DRS
 
+Journal article: Mayna H. Nguyen, Yao Zhang, Frank Wang, Jose De La Garza Evia Linan, Mia K. Markey, James W. Tunnell, "Machine learning to extract physiological parameters from multispectral diffuse reflectance spectroscopy," J. Biomed. Opt. 26(5) 052912 (17 March 2021) https://doi.org/10.1117/1.JBO.26.5.052912
+
 Code for machine learning models and Monte Carlo Lookup Table (MCLUT) models to extract physiological parameters from 6 wavelengths of diffuse reflectance. 
 Folders:
 - Analysis and figures: code to generate figures, calculate errors, determine crosstalk
